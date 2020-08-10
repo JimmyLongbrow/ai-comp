@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  key: MyText
+  scale: MyText
+  data: MyText
+  user_id: 1
+  bpm: 1
+
+two:
+  name: MyText
+  key: MyText
+  scale: MyText
+  data: MyText
+  user_id: 1
+  bpm: 1
