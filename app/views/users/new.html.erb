@@ -7,24 +7,32 @@
   </ul>
 <% end %>
 
-<%= form_for @user do |f| %>
+<%= form_for @user, html: {multipart: true} do |f| %>
 
   <%= f.label :name %>
   <%= f.text_field :name %>
   <br>
+  <br>
+  <%= f.label :profile_pic, 'Profile Pic' %>
+  <%= f.cl_image_upload :profile_pic %>
+  <br>
+  <br>
   <%= f.label :email %>
   <%= f.text_field :email %>
+  <br>
   <br>
   <%= f.label :genre %>
   <%= f.text_field :genre %>
   <br>
+  <br>
   <%= f.label :password %>
   <%= f.password_field :password %>
+  <br>
   <br>
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
   <br>
-
+  <br>
   <%= f.submit 'Sign Up' %>
 
 <% end %>

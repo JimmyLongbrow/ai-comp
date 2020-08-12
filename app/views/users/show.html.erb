@@ -1,2 +1,7 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1><%= @current_user.name %></h1>
+
+<%= cl_image_tag @current_user.profile_pic %>
+
+<p>
+  <strong>Genre:</strong> <%= @current_user.genre %>
+</p>

@@ -6,5 +6,13 @@ Rails.application.routes.draw do
   get '/login' => 'session#new'
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
-  resources:users
+  get '/users/edit' => 'users#edit'
+  post '/users/edit' => 'users#show'
+  resources :users do
+    member do
+      get :confirm_email
+    end
+  end
+  resources :recordings
+  resources :sequences
 end

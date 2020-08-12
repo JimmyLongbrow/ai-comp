@@ -1,2 +1,16 @@
-<h1>Pages#welcome</h1>
-<p>Find me in app/views/pages/welcome.html.erb</p>
+<% if @current_user==nil %>
+  <%= redirect_to login_path %>
+<% else %>
+<h1>Hello <%= @current_user.name %></h1>
+
+<%= cl_image_tag @current_user.profile_pic %>
+
+<p>
+  <strong>Genre:</strong> <%= @current_user.genre %>
+</p>
+<p>
+  <strong>Email:</strong> <%= @current_user.email %>
+</p>
+
+
+<% end %>

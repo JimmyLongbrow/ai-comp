@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_10_010256) do
+ActiveRecord::Schema.define(version: 2020_08_12_045429) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "follows", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followed_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "recordings", force: :cascade do |t|
     t.text "file"
@@ -21,6 +28,13 @@ ActiveRecord::Schema.define(version: 2020_08_10_010256) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "comments"
+    t.integer "likes"
+  end
+
+  create_table "recordings_users", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "recording_id"
   end
 
   create_table "sequences", force: :cascade do |t|
@@ -42,7 +56,10 @@ ActiveRecord::Schema.define(version: 2020_08_10_010256) do
     t.text "genre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "profile_pic"
     t.boolean "email_verified"
+    t.boolean "email_confirmed"
+    t.string "confirm_token"
   end
 
 end
