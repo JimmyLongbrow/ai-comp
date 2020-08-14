@@ -1,6 +1,4 @@
-<% if @current_user==nil %>
-  <%= redirect_to login_path %>
-<% else %>
+
 <h1>Hello <%= @current_user.name %></h1>
 
 <%= cl_image_tag @current_user.profile_pic %>
@@ -12,5 +10,7 @@
   <strong>Email:</strong> <%= @current_user.email %>
 </p>
 
-
+<% @current_user.recordings.each do |r| %>
+  <%= link_to r.comments, recording_path(r.id) %>
+  <br>
 <% end %>

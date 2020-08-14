@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'resumes/index' => 'resume#show'
+  get 'resumes/new' => 'resume#new'
+  get 'resumes/create' => 'resume#create'
+  get 'resumes/destroy' => 'resume#destroy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: 'pages#welcome'
@@ -15,4 +19,6 @@ Rails.application.routes.draw do
   end
   resources :recordings
   resources :sequences
+  get '/sequences/:id/download' => 'sequences#download', as: 'sequence_download'
+  resources :resumes, only: [:index, :new, :create, :destroy]
 end

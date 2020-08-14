@@ -1,0 +1,13 @@
+<h2>All Generated Sequences</h2>
+
+<ul>
+<% @sequences.each do |sequence| %>
+
+  <li>
+
+    <%= link_to sequence.name, sequence_path(sequence.id) %>
+
+  </li>
+
+<% end %>
+</ul>

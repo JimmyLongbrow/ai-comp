@@ -1,0 +1,21 @@
+<h1><%= @sequence.name %></h1>
+
+<p>
+  <strong>Notes:</strong> <%= @sequence.data %>
+</p>
+<p>
+  <strong>Name:</strong> <%= @sequence.name %>
+</p>
+<p>
+  <strong>Key:</strong> <%= @sequence.key %>
+</p>
+<p>
+  <strong>Genre:</strong> <%= @sequence.scale %>
+</p>
+<p>
+  <strong>Beats Per Minute:</strong> <%= @sequence.bpm %>
+</p>
+<p>
+<%= link_to 'Download MIDI File', sequence_download_path(@sequence.id) %>
+</p>
+<%= link_to 'Upload Remix', new_recording_path(sequence_id:@sequence.id) %>

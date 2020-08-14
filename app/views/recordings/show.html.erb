@@ -1,0 +1,6 @@
+<h1><%= @recording.comments %></h1>
+
+<%# link_to 'Download File', cl_path(@recording.file)  %>
+<%= cl_video_tag @recording.file, audio_codec: 'mp3' %>
+<br>
+<%= link_to 'Edit Recording', edit_recording_path(@recording.id) %>

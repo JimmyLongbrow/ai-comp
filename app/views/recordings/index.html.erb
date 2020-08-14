@@ -1,0 +1,9 @@
+<h2>Every Users Recordings</h2>
+
+<ul>
+<% @recordings.each do |r| %>
+  <li>
+    <%= link_to recording.file, recording_path(recording.id) %>
+  </li>
+<% end %>
+</ul>

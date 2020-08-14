@@ -1,0 +1,22 @@
+<h1>Generate Midi</h1>
+<%= form_for @sequence, html: {multipart: true} do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <br>
+  <%= f.label :key %>
+  <%= f.select(:key, Sequence.key_list) %>
+  <br>
+  <br>
+  <%= f.label :scale %>
+  <%= f.select(:scale, Sequence.scale_list) %>
+  <br>
+  <br>
+  <%= f.label :bpm %>
+  <%= f.text_field :bpm %>
+  <br>
+  <br>
+  <%= f.submit 'Generate' %>
+
+<% end %>

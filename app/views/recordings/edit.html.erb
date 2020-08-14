@@ -1,0 +1,8 @@
+<h2>
+  Edit <%= @recording.file %>
+</h2>
+
+<%= render partial: 'form' %>
+
+<%= button_to 'Delete', @recording, :method => :delete %>
+<% end %>

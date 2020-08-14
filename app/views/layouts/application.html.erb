@@ -7,10 +7,15 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <title>File Uploading</title>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
     <%= cloudinary_js_config %>
   </head>
 
   <body>
+
     <nav>
       <% if @current_user.present? %>
       Hello, <%= @current_user.name %>
@@ -24,7 +29,7 @@
       |
       <%= link_to 'Upload Remix', new_recording_path %>
       |
-      <%= link_to 'View Remixes', 'pending' %>
+      <%= link_to 'View Remixes', recordings_path %>
       |
       <%= link_to 'News Feed', recordings_path %>
       |
@@ -35,6 +40,7 @@
       <%= link_to 'Sign Up', new_user_path %>
       <% end %>
     </nav>
+
     <%= yield %>
   </body>
 </html>

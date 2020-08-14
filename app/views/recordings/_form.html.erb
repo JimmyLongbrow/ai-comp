@@ -1,0 +1,12 @@
+<%= form_for @recording, html: {multipart: true} do |f| %>
+
+  <%= f.label :file %>
+  <%= f.cl_upload :file %>
+  <%= f.hidden_field :sequence_id, value: params[:sequence_id] %>
+  <br>
+  <%= f.label :comments %>
+  <%= f.text_field :comments %>
+  <br>
+  <%= f.submit 'Upload Your Remix' %>
+
+<% end %>

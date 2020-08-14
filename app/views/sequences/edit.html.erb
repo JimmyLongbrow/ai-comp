@@ -1,0 +1,37 @@
+<h2>Edit <%= @sequence.name %></h2>
+<% if @sequence.errors.full_messages.any? %>
+  <ul>
+    <% @sequence.errors.full_messages.each do |e| %>
+    <li><%= e %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% if flash[:error] %>
+  <br>
+  <strong>
+    <%= flash[:error] %>
+  </strong>
+  <br>
+  <br>
+<% end %>
+
+<%= form_for @sequence, html: {multipart: true} do |f| %>
+  <br>
+  <br>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <br>
+  <%= f.label :bpm %>
+  <%= f.text_field :bpm %>
+  <br>
+  <br>
+  <%= f.label :data %>
+  <%= f.text_field :data %>
+  <br>
+  <br>
+  <%= button_to 'Update', @sequence, :method => :edit %>
+  <br>
+  <%= button_to 'Delete', @sequence, :method => :delete %>
+<% end %>
