@@ -1,6 +1,6 @@
 # README
 
-  # AI COMP
+  # AI-Comp
 Version 1.0.1 - Thu 23 Sep 2020
 
 by Nemo Petrovic
