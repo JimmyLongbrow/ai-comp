@@ -13,6 +13,8 @@ Ai Comp: Made by a Musician for Musicians.
 # Installation and Requirements
 Heroku: https://cryptic-shelf-34685.herokuapp.com
 
+Stick to 120bpm as the other tempo's may break the code. Still have to bug fix it. You can change the tempo once its downloaded and drag dropped into your DAW.
+
 # Project Description
 The Project consists of 9 main sections;
 
